@@ -1,9 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');  //json data gets parsed correctly
 const { randomBytes } = require('crypto');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
+//need to use cors as it blocks requests from one port to another in browser
+//like if we do 3000 port for react app and 4000 for posts 
 
 //while testing in postman -add this header
 // Content-type   -- application/json
