@@ -14,7 +14,7 @@ app.get('/posts', (req, res) => {
     return res.send(posts);
 });
 
-app.post('/posts', async (req, res) => {
+app.post('/posts', (req, res) => {
     const id = randomBytes(4).toString('hex');  //to generate random id
     const { title } = req.body;
 
